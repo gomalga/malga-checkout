@@ -1,0 +1,234 @@
+.checkout-modal-boleto__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  @include md {
+    width: 585px;
+    height: auto;
+  }
+}
+
+.checkout-modal-boleto__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: var(--malga-checkout-spacing-default) 0
+    var(--malga-checkout-spacing-md) 0;
+  background: var(--malga-checkout-color-modal-neutral);
+
+  @include md {
+    flex-direction: row;
+    height: 170px;
+    padding: 0;
+    border-radius: var(--malga-checkout-border-radius-lg)
+      var(--malga-checkout-border-radius-lg) 0 0;
+  }
+
+  & > checkout-icon {
+    display: none;
+
+    @include md {
+      display: block;
+      margin-right: var(--malga-checkout-spacing-default);
+      margin-bottom: 0;
+    }
+  }
+
+  & > checkout-typography > h3 {
+    width: 300px;
+    text-align: center;
+
+    @include md {
+      width: auto;
+      text-align: start;
+    }
+  }
+}
+
+.checkout-modal-boleto__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--malga-checkout-spacing-md)
+    var(--malga-checkout-spacing-default);
+  background: var(--malga-checkout-color-accent-light);
+  position: relative;
+
+  @include md {
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 0 0 var(--malga-checkout-border-radius-lg)
+      var(--malga-checkout-border-radius-lg);
+  }
+
+  & > checkout-typography > h4 {
+    color: var(--malga-checkout-color-grey-middle);
+    text-align: center;
+  }
+
+  & > checkout-typography > h5 {
+    color: var(--malga-checkout-color-grey-darkness);
+    font-weight: 400;
+    text-align: center;
+    margin-top: 23px;
+    margin-bottom: 26px;
+  }
+
+  &--header-detail {
+    position: absolute;
+    display: block;
+    height: 10px;
+    width: 100%;
+    background: var(--malga-checkout-color-accent-light);
+    border-radius: 20px 20px 0 0;
+    top: -10px;
+    left: 0px;
+
+    @include md {
+      display: none;
+    }
+  }
+}
+
+.checkout-modal-boleto__bar-code-informations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--malga-checkout-spacing-sm);
+  border-radius: var(--malga-checkout-border-radius-md);
+  background: var(--malga-checkout-color-accent-normal);
+  margin-bottom: var(--malga-checkout-spacing-md);
+
+  & > checkout-typography > p {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 260px;
+    display: block;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: var(--malga-checkout-spacing-xs);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+
+    @include md {
+      font-size: 16px;
+      width: 500px;
+    }
+  }
+
+  & > checkout-clipboard-button {
+    display: none;
+
+    @include md {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.checkout-modal-boleto__clipboard-button-mobile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--malga-checkout-spacing-md);
+
+  @include md {
+    display: none;
+  }
+}
+
+.checkout-modal-boleto__payment-informations {
+  margin-bottom: var(--malga-checkout-spacing-default);
+
+  & > p {
+    @extend %typography-field;
+    padding: 0;
+    margin: 0;
+    line-height: 24px;
+    color: var(--malga-checkout-color-grey-darkness);
+
+    & > strong {
+      font-weight: bold;
+    }
+  }
+}
+
+.checkout-modal-boleto__informations {
+  & > checkout-typography > h5 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: var(--malga-checkout-spacing-default);
+  }
+
+  & > ul > li {
+    @extend %typography-field;
+    color: var(--malga-checkout-color-grey-darkness);
+    padding: 0;
+    margin: 0;
+    margin-bottom: var(--malga-checkout-spacing-default);
+  }
+
+  & > ul {
+    padding: 0 var(--malga-checkout-spacing-default);
+  }
+}
+
+.checkout-modal-boleto__action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--malga-checkout-spacing-sm);
+  padding-bottom: var(--malga-checkout-spacing-sm);
+
+  & > a {
+    @extend %reset;
+    @extend %centralized;
+    @include transition($element: background);
+
+    flex-direction: row;
+    cursor: pointer;
+    outline: none;
+
+    height: 45px;
+    padding: 0 var(--malga-checkout-spacing-sm);
+    border: 0;
+    border-radius: var(--malga-checkout-border-radius-default);
+    background: var(--malga-checkout-color-brand-middle);
+
+    letter-spacing: 1.25px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--malga-checkout-color-accent-light);
+    margin-right: var(--malga-checkout-spacing-sm);
+
+    & > checkout-typography {
+      margin-right: var(--malga-checkout-spacing-xs);
+    }
+
+    &:hover {
+      background: var(--malga-checkout-color-brand-normal);
+    }
+  }
+
+  & > checkout-button > button {
+    background: transparent;
+    color: var(--malga-checkout-color-brand-middle);
+    border: 0;
+
+    &:hover {
+      background: transparent;
+    }
+
+    &:focus {
+      border: none;
+    }
+  }
+}

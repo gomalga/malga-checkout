@@ -1,0 +1,78 @@
+{
+  "name": "malga-checkout",
+  "private": true,
+  "description": "Malga Checkout is a webcomponent running on all front-end frameworks",
+  "keywords": [
+    "web-components",
+    "react",
+    "vue",
+    "angular",
+    "vanilla",
+    "stencil",
+    "payments",
+    "checkout",
+    "malga"
+  ],
+  "author": "Leonardo Pinheiro <leonardo@malga.io>",
+  "contributors": [
+    "Leonardo Pinheiro <leonardo@malga.io>",
+    "Filippe Rodrigues <filippe@malga.io>"
+  ],
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npx lerna run lint --stream"
+    ]
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/checkout-full/*",
+      "packages/checkout/*"
+    ],
+    "nohoist": [
+      "**/@types/**"
+    ]
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "start:sdk": "lerna run start --scope @malga-checkout/core",
+    "build:sdk": "lerna run build --scope '{@malga-checkout/i18n,@malga-checkout/utils,@malga-checkout/common,@malga-checkout/core,@malga-checkout/angular,@malga-checkout/react,@malga-checkout/vue}'",
+    "start:full": "lerna run start --scope @malga-checkout-full/core",
+    "build:full": "yarn build:sdk && lerna run build --scope '{@malga-checkout-full/core,@malga-checkout-full/angular,@malga-checkout-full/react,@malga-checkout-full/vue}'",
+    "i18n:download": "lerna run i18n:download --scope @malga-checkout/i18n",
+    "i18n:upload": "lerna run i18n:upload --scope @malga-checkout/i18n",
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "refresh": "yarn clean -y && yarn bootstrap",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "prerelease": "yarn build:sdk && yarn build:full",
+    "release": "changeset publish",
+    "beta": "changeset pre enter beta",
+    "beta:exit": "changeset pre exit"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.7",
+    "@changesets/cli": "^2.25.2",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.29.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "lerna": "^4.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1"
+  }
+}

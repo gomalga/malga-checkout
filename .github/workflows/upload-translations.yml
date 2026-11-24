@@ -1,0 +1,62 @@
+name: Translations Upload
+
+on:
+  push:
+    branches:
+      - 'release/*'
+      - 'beta/*'
+      - '!changeset-release/*'
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+  CROWDIN_API_TOKEN: ${{ secrets.CROWDIN_API_TOKEN }}
+
+jobs:
+  crowdin:
+    name: 'Crowdin Upload'
+    runs-on: ubuntu-latest
+    if: github.repository == 'plughacker/malga-checkout'
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: yarn
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Verify changes in translation files
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            packages/i18n/src/configs/translations.json
+
+      - name: Setup Crowdin CLI
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: |
+          yarn global add @crowdin/cli
+
+      - name: Upload translation files to Crowdin
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: |
+          yarn i18n:upload
+          echo "Files has been uploaded"
+
+      - name: Notify Slack channel
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TRANSLATIONS_WEBHOOK_URL }}
+        uses: act10ns/slack@v1
+        with:
+          message: 📝 Novas traduções disponíveis no checkout para serem feitas! 📝
+          status: success
+          channel: ${{ secrets.SLACK_TRANSLATIONS_CHANNEL }}

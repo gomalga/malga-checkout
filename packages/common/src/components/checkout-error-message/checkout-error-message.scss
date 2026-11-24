@@ -1,0 +1,9 @@
+.checkout-error-message {
+  & > checkout-typography > p {
+    margin-left: var(--malga-checkout-spacing-sm);
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+}

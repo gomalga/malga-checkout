@@ -1,0 +1,10 @@
+{
+  "packages": [
+    "packages/*",
+    "packages/checkout-full/*",
+    "packages/checkout/*"
+  ],
+  "useWorkspaces": true,
+  "version": "independent",
+  "npmClient": "yarn"
+}

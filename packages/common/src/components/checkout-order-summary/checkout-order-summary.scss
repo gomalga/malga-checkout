@@ -1,0 +1,100 @@
+.checkout-order-summary__container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--malga-checkout-spacing-sm);
+  border-radius: var(--malga-checkout-spacing-xs);
+  background: var(--malga-checkout-color-accent-light);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+
+  &--full-width {
+    width: 100%;
+  }
+}
+
+.checkout-order-summary__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  & > h3 {
+    padding: 0;
+    margin: 0;
+    font-family: var(--malga-checkout-typography-family);
+    font-size: var(--malga-checkout-spacing-sm);
+    font-weight: bold;
+    color: var(--malga-checkout-color-brand-middle);
+  }
+
+  & > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+
+    & > checkout-icon > i > svg {
+      color: var(--malga-checkout-color-brand-middle);
+    }
+  }
+}
+
+.checkout-order-summary__products {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  margin-top: var(--malga-checkout-spacing-sm);
+}
+
+.checkout-order-summary__product-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: var(--malga-checkout-spacing-xs);
+
+  & > p {
+    padding: 0;
+    margin: 0;
+  }
+
+  & > checkout-typography > span {
+    margin-left: var(--malga-checkout-spacing-default);
+  }
+}
+
+.checkout-order-summary__delivery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: var(--malga-checkout-spacing-default);
+}
+
+.checkout-order-summary__total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: calc(
+    var(--malga-checkout-spacing-xs) + var(--malga-checkout-spacing-xxs)
+  );
+  margin-top: var(--malga-checkout-spacing-sm);
+  border-top: 1px solid black;
+
+  & > p {
+    font-family: var(--malga-checkout-typography-family);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.checkout-order-summary__loaders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}

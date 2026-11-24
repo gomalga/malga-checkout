@@ -1,0 +1,71 @@
+.checkout-accordion__container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--malga-checkout-spacing-sm);
+  border-radius: var(--malga-checkout-spacing-xs);
+  background: var(--malga-checkout-color-accent-light);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+
+  &--full-width {
+    width: 100%;
+  }
+}
+
+.checkout-accordion__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: var(--malga-checkout-typography-family);
+  font-size: var(--malga-checkout-spacing-sm);
+  font-weight: bold;
+  color: var(--malga-checkout-color-brand-middle);
+
+  & > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding: 0;
+
+    & > checkout-icon > i > svg {
+      color: var(--malga-checkout-color-brand-middle);
+    }
+  }
+
+  & > span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @extend %typography-label;
+    color: var(--malga-checkout-color-grey-light);
+    fill: var(--malga-checkout-color-grey-light);
+
+    & > checkout-icon {
+      margin-right: var(--malga-checkout-spacing-xs);
+    }
+  }
+
+  &--editable {
+    & > button {
+      opacity: 1;
+    }
+  }
+}
+
+.checkout-accordion__content {
+  height: 0px;
+  overflow: hidden;
+  margin-top: 0;
+
+  &--opened {
+    height: 100%;
+    margin-top: var(--malga-checkout-spacing-sm);
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.2.0/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "plughacker/malga-checkout" }
+  ],
+  "commit": false,
+  "fixed": [
+    [
+      "@malga-checkout/core",
+      "@malga-checkout/angular",
+      "@malga-checkout/react",
+      "@malga-checkout/vue"
+    ],
+    [
+      "@malga-checkout-full/core",
+      "@malga-checkout-full/angular",
+      "@malga-checkout-full/react",
+      "@malga-checkout-full/vue"
+    ]
+  ],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

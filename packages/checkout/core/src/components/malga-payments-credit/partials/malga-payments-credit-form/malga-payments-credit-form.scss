@@ -1,0 +1,71 @@
+.malga-payments-credit-form__form {
+  width: 100%;
+
+  & > checkout-text-field {
+    margin-top: var(--malga-checkout-spacing-sm);
+  }
+
+  & > checkout-select-field {
+    margin-top: var(--malga-checkout-spacing-sm);
+  }
+}
+
+.malga-payments-credit-form__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.malga-payments-credit-form__row-fields {
+  display: flex;
+  height: 100%;
+  border: none;
+  margin: 0;
+  margin-top: var(--malga-checkout-spacing-xs);
+  margin-bottom: var(--malga-checkout-spacing-xs);
+  padding: 0;
+
+  @include md {
+    flex-direction: row;
+  }
+
+  & > checkout-text-field:first-child,
+  & > div:first-child {
+    margin-bottom: var(--malga-checkout-spacing-xs);
+
+    @include md {
+      margin-bottom: 0;
+      margin-right: var(--malga-checkout-spacing-xs);
+    }
+  }
+
+  & > checkout-text-field:last-child,
+  & > div:last-child {
+    @include md {
+      margin-left: var(--malga-checkout-spacing-xs);
+    }
+  }
+  flex-direction: column;
+}
+
+.malga-payments-credit__error-message {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.malga-payments-credit-form__save-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: var(--malga-checkout-spacing-default);
+  margin-bottom: var(--malga-checkout-spacing-sm);
+
+  & > checkout-typography {
+    font-weight: 400;
+    margin-left: var(--malga-checkout-spacing-sm);
+  }
+}

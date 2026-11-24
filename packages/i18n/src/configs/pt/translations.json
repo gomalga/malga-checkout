@@ -1,0 +1,268 @@
+{
+  "common": {
+    "total": "total",
+    "processing": "Processando",
+    "other": "Outro",
+    "order": {
+      "amount": "Total",
+      "delivery": "Frete"
+    }
+  },
+  "paymentMethods": {
+    "common": {
+      "payButton": "Pagar"
+    },
+    "card": {
+      "title": "Cartão de crédito",
+      "newCardTitle": "Novo cartão de crédito",
+      "newCard": {
+        "errorMessageAllFieldsRequired": "Preencha todos os campos para prosseguir.",
+        "creditCard": {
+          "validity": "válido até",
+          "name": "Nome Completo",
+          "cvv": "CVV",
+          "safeEnvironment": "ambiente seguro"
+        },
+        "fields": {
+          "cardNumber": {
+            "label": "Número do cartão",
+            "errorMessageRequired": "Número do cartão é obrigatório.",
+            "errorMessageMin": "Número do cartão incompleto.",
+            "errorMessageInvalidFormat": "Número do cartão inválido."
+          },
+          "expirationDate": {
+            "label": "Expiração (MM/AA)",
+            "errorMessageRequired": "Validade é obrigatória.",
+            "errorMessageMin": "Data de expiração incompleta.",
+            "errorMessageMonthInvalid": "Data de expiração inválida.",
+            "errorMessageInvalidFormat": "Cartão vencido."
+          },
+          "cvv": {
+            "label": "CVV",
+            "errorMessageRequired": "CVV é obrigatório.",
+            "errorMessageMin": "CVV incompleto.",
+            "errorMessageInvalidFormat": "CVV inválido."
+          },
+          "name": {
+            "label": "Nome do titular do cartão",
+            "errorMessageRequired": "Nome do titular é obrigatório.",
+            "errorMessageInvalidFormat": "Nome inválido."
+          },
+          "installments": {
+            "label": "Parcelamento",
+            "errorMessageRequired": "Selecione uma parcela para prosseguir."
+          },
+          "saveCard": {
+            "label": "Armazenar cartão para compras futuras"
+          }
+        }
+      },
+      "savedCards": {
+        "card": "Cartão de crédito ••••",
+        "fields": {
+          "cvv": {
+            "description": "Para efetuar sua transação de forma segura, informe o CVV presente no verso do seu cartão.",
+            "label": "Código de segurança (CVV)",
+            "errorMessage": "Formato inválido, verifique os dados do cartão."
+          },
+          "installments": {
+            "label": "Parcelamento",
+            "errorMessage": "Parcelamento é obrigatório."
+          }
+        }
+      }
+    },
+    "pix": {
+      "title": "PIX",
+      "descriptions": {
+        "showQrCode": "O QR Code do PIX será exibido",
+        "paymentConfirmation": "após a confirmação de compra"
+      }
+    },
+    "boleto": {
+      "title": "Boleto",
+      "descriptions": {
+        "showBarcode": "O boleto com o código de barras será exibido",
+        "paymentConfirmation": "após a confirmação de compra"
+      }
+    },
+    "nupay": {
+      "title": "Nubank",
+      "content": {
+        "title": "Mais rápido, fácil e seguro.",
+        "subtitle": "Novidade",
+        "description": "Você pode ter um limite extra para essa compra! Verifique no momento do pagamento se está disponível."
+      },
+      "stepper": {
+        "first": "A compra será finalizada no app do Nubank.",
+        "second": "Parcele sua compra no crédito ou pague à vista pelo débito.",
+        "third": "Não precisa preencher os dados do seu cartão.",
+        "fourth": "Pode confiar, é seguro. Sua compra é protegida pelas nossas medidas de segurança."
+      },
+      "details": {
+        "first": "Para usar essa forma de pagamento, você",
+        "second": "precisa ser cliente do Nubank e ter limite de crédito ou saldo disponível",
+        "third": "na conta."
+      }
+    },
+    "drip": {
+      "title": "PIX parcelado + cashback",
+      "descriptions": {
+        "first": "São 3 passos simples para ter sua",
+        "second": "compra confirmada em {installments}x no PIX parcelado, zero juros, cashback",
+        "third": "e dependendo do seu perfil, com ou sem pagamento de entrada."
+      },
+      "installments": {
+        "fifteenDays": "° PIX em 15 dias",
+        "thirtyDays": "° PIX em 30 dias"
+      }
+    }
+  },
+  "dialogs": {
+    "common": {
+      "actionButtonLabel": "Continuar",
+      "clipboardClicked": "Código Copiado",
+      "clipboard": "Copiar Código",
+      "clipboardDescription": "Escaneie ou clique para copiar o código para pagar no aplicativo do seu banco."
+    },
+    "pix": {
+      "title": "PIX disponível para pagamento!",
+      "subtitle": "Faça o pagamento do PIX abaixo para finalizar o seu pedido:",
+      "waitingPaymentMessage": "Pedido aguardando pagamento!",
+      "importantMessage": "Informações importantes",
+      "importantMessageDefault": "Caso o tempo de pagamento tenha expirado e o Pix não tenha sido pago, seu pedido será cancelado automaticamente. Não pague após este horário.",
+      "importantMessageFirst": "Vamos avisar por e-mail quando o banco identificar o depósito. Esse processo é automático.",
+      "importantMessageSecond": "Caso o tempo de pagamento tenha expirado e o Pix não tenha sido pago, seu pedido será cancelado automaticamente. Não pague após este horário.",
+      "errorMessage": "Não foi possível concluir sua transação, tente novamente.",
+      "errorMessageExpired": "Caso já tenha feito o pagamento, aguarde o e-mail de confirmação. Se não fez o pagamento ainda, faça um novo pedido.",
+      "errorTitleExpired": "O código PIX expirou",
+      "successMessage": "Pagamento feito com sucesso",
+      "expirationTimeCode": "Seu código",
+      "expirationTime": "expira em:",
+      "amount": "Valor a pagar:",
+      "paymentInstructions": "Para fazer o pagamento",
+      "paymentInstructionsFirstMessage": "Abra o aplicativo do seu banco e selecione o ambiente do PIX.",
+      "paymentInstructionsSecondMessage": "Escolha a opção pagar com código e cole o código acima.",
+      "paymentInstructionsThirdMessage": "Confirme as informações e finalize a sua compra."
+    },
+    "boleto": {
+      "title": "Boleto disponível para pagamento!",
+      "subtitle": "Faça o pagamento do Boleto abaixo para finalizar o seu pedido:",
+      "waitingPaymentMessage": "Pedido aguardando pagamento!",
+      "errorMessage": "Não foi possível concluir sua transação, tente novamente.",
+      "clipboard": "Copiar Código",
+      "amount": "Valor a pagar:",
+      "expirationDate": "Vencimento:",
+      "importantMessage": "Informações importantes",
+      "importantMessageDefault": "Vamos avisar por e-mail quando o banco identificar o depósito. Esse processo pode levar até 48h e é automático.",
+      "importantMessageFirst": "Caso o boleto não seja pago até {expirationDate}, o pedido será cancelado automaticamente. Não pague após esta data.",
+      "showBoleto": "Exibir Boleto"
+    },
+    "card": {
+      "errorMessage": "Não foi possível concluir sua transação, tente novamente."
+    },
+    "drip": {
+      "errorMessage": "Não foi possível concluir sua transação, tente novamente."
+    },
+    "session": {
+      "errorMessage": "Não foi possível concluir sua transação, tente novamente."
+    },
+    "nupay": {
+      "errorMessage": "Não foi possível concluir sua transação, tente novamente."
+    },
+    "success": {
+      "description": "Pedido recebido com sucesso!",
+      "actionButtonLabel": "Continuar"
+    },
+    "error": {
+      "actionButtonLabel": "Tentar Novamente"
+    }
+  },
+  "page": {
+    "safeEnvironment": "Ambiente seguro",
+    "order": "Pedido",
+    "identification": "Identificação",
+    "payment": "Pagamento",
+    "secureAndEncrypted": "Seguro e encriptado",
+    "customer": {
+      "personalData": "Dados pessoais",
+      "document": "Documento",
+      "address": "Endereço",
+      "submitButton": "Próximo",
+      "fields": {
+        "name": {
+          "label": "Nome completo",
+          "errorMessageRequired": "Nome é obrigatório",
+          "errorMessageInvalidFormat": "Nome inválido."
+        },
+        "email": {
+          "label": "E-mail",
+          "errorMessageRequired": "E-mail é obrigatório.",
+          "errorMessageInvalidFormat": "E-mail inválido."
+        },
+        "phoneNumber": {
+          "label": "Telefone",
+          "errorMessageRequired": "Telefone é obrigatório.",
+          "errorMessageInvalidFormat": "Formato inválido, verifique o seu número de telefone."
+        },
+        "documentCountry": {
+          "label": "País do documento",
+          "errorMessageRequired": "País é obrigatório."
+        },
+        "documentType": {
+          "label": "Tipo do documento",
+          "errorMessageRequired": "Tipo do documento é obrigatório."
+        },
+        "identification": {
+          "labelBrazil": "CPF/CNPJ",
+          "errorMessageRequiredBrazil": "Número do documento é obrigatório.",
+          "errorMessageInvalidCpf": "CPF inválido.",
+          "errorMessageInvalidCnpj": "CNPJ inválido.",
+          "errorInvalidNationalDocument": "Seu documento está incompleto.",
+          "errorRequiredCountry": "Selecione um país.",
+          "errorRequiredType": "Selecione o tipo do documento.",
+          "errorRequiredCountryAndType": "Selecione o país e o tipo do documento.",
+          "labelInternational": "Número do documento",
+          "errorMessageRequiredInternational": "Número do documento é obrigatório.",
+          "errorMessageInvalidFormatInternational": "Formato inválido, verifique o seu documento."
+        },
+        "zipCode": {
+          "labelBrazil": "CEP",
+          "descriptionBrazil": "Não sei meu CEP",
+          "errorMessageRequiredBrazil": "CEP é obrigatório.",
+          "labelInternational": "Código postal (CEP)",
+          "errorMessageRequiredInternational": "Código postal é obrigatório.",
+          "errorMessageInvalidZipCodeFormat": "Código postal inválido.",
+          "errorMessageRequiredCountry": "Selecione um país"
+        },
+        "street": {
+          "label": "Endereço",
+          "errorMessageRequired": "Endereço é obrigatório."
+        },
+        "number": {
+          "label": "Número",
+          "errorMessageRequired": "Número é obrigatório."
+        },
+        "complement": {
+          "label": "Complemento (opcional)"
+        },
+        "neighborhood": {
+          "label": "Bairro",
+          "errorMessageRequired": "Bairro é obrigatório."
+        },
+        "city": {
+          "label": "Cidade",
+          "errorMessageRequired": "Cidade é obrigatório."
+        },
+        "state": {
+          "label": "Estado",
+          "errorMessageRequired": "Estado é obrigatório."
+        },
+        "country": {
+          "label": "País",
+          "errorMessageRequired": "País é obrigatório."
+        }
+      }
+    }
+  }
+}

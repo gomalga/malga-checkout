@@ -1,0 +1,27 @@
+.checkout-clipboard-button__container {
+  display: block;
+  width: 100%;
+}
+
+.checkout-clipboard-button__button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+
+  & > checkout-icon {
+    margin-right: var(--malga-checkout-spacing-xs);
+  }
+
+  & > checkout-typography {
+    text-align: start;
+
+    & > span {
+      color: var(--malga-checkout-color-grey-normal);
+    }
+  }
+}
